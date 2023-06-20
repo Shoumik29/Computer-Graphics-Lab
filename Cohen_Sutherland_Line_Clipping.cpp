@@ -39,7 +39,7 @@ void cohen_sutherland(int x1, int y1, int x2, int y2){
 
             if(code&Top){
                 y = yMax;
-                x = x1+(x2-x1)/(y2-y1)*(y - y1);
+                x = x1+(x2-x1)/(y2-y1)*(y-y1);
             }
             else if(code&Bottom){
                 y = yMin;
