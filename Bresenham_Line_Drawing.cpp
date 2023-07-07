@@ -11,7 +11,7 @@ void bresenham_line(int x1, int y1, int x2, int y2){
 
     int dx, dy;
     dx = x2-x1;
-    dy = y2-y1;
+    dy = abs(y2-y1);
     int p = (2*dy)-dx;
 
     //Printing two end points
@@ -30,7 +30,7 @@ void bresenham_line(int x1, int y1, int x2, int y2){
             p = p+(2*(dy-dx));
         }
         putpixel(x1,y1,15);
-        delay(1);
+        //delay(1);
     }
 }
 
@@ -38,7 +38,7 @@ int main(){
     int gdriver = DETECT, gmode;
     initgraph(&gdriver, &gmode, "");
 
-    bresenham_line(23, 90, 500, 105 ); //500, 105, 3, 200 jhamela wala test case
+    bresenham_line(23, 90, 500, 105); //500, 105, 3, 200 jhamela wala test case
 
     getch();
     closegraph();
