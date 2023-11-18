@@ -96,7 +96,7 @@ int main(){
     initgraph(&gdriver, &gmode, "");
 
     //Defining the polygon
-    vector<int> polygon_points = {70, 200, 300, 250, 350, 450, 580, 200, 225, 50, 70, 200}; //70, 200, 300, 250, 350, 450, 580, 200, 225, 50, 70, 200 good sample
+    vector<int> polygon_points = {70, 200, 350, 450, 580, 200, 225, 50, 70, 200}; //70, 200, 300, 250, 350, 450, 580, 200, 225, 50, 70, 200 good sample
     //draw_polygon(polygon_points);
     sutherland_hodgeman(polygon_points);
 

@@ -4,6 +4,7 @@
 using namespace std;
 
 void make_circle(int x, int y, int X, int Y){
+
     putpixel(X+x,Y+y,14);
     putpixel(X-x,Y+y,14);
     putpixel(X+x,Y-y,14);
@@ -13,7 +14,7 @@ void make_circle(int x, int y, int X, int Y){
     putpixel(Y+y,X-x,14);
     putpixel(Y-y,X-x,14);
 
-    delay(5); //set to 100 for better view
+    delay(100); //set to 100 for better view
 }
 
 void mid_point_circle(int X, int Y, int r){

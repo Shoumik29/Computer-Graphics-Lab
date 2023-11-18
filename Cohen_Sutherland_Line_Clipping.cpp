@@ -14,8 +14,8 @@ int region_code(int x, int y){
     int code = 0;
     if(x<xMin) code = code|Left;
     else if(x>xMax) code = code|Right;
-    if(y<yMin) code = code|Bottom;
-    else if(y>yMax) code = code|Top;
+    if(y<yMin) code = code|Top;
+    else if(y>yMax) code = code|Bottom;
     return code;
 }
 
@@ -38,11 +38,11 @@ void cohen_sutherland(int x1, int y1, int x2, int y2){
             else code = code2;
 
             if(code&Top){
-                y = yMax;
+                y = yMin;
                 x = x1+(x2-x1)/(y2-y1)*(y-y1);
             }
             else if(code&Bottom){
-                y = yMin;
+                y = yMax;
                 x = x1+(x2-x1)/(y2-y1)*(y-y1);
             }
             else if(code&Left){
@@ -75,6 +75,7 @@ void cohen_sutherland(int x1, int y1, int x2, int y2){
 int main(){
     int gdriver = DETECT, gmode;
     initgraph(&gdriver, &gmode, "");
+
 
     while(true){
         cohen_sutherland(100, rand() % 1000, 700, 400);

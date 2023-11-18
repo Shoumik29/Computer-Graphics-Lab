@@ -7,12 +7,12 @@ void draw_fractal(vector<pair<int, int>> points){
     for(int i=0;(i+1)<points.size();i++) line(points[i].first, points[i].second, points[i+1].first, points[i+1].second);
 }
 
-vector<pair<int,int>> trisection_points(int x1, int y1, int x2, int y2){
+/*vector<pair<int,int>> trisection_points(int x1, int y1, int x2, int y2){
     vector<pair<int, int>> tri_points;
     tri_points.push_back({(x2+(2*x1))/3, (y2+(2*y1))/3});
     tri_points.push_back({(x1+(2*x2))/3, (y1+(2*y2))/3});
     return tri_points;
-}
+} kept this for the formula of tri section points*/
 
 void snowflake(vector<pair<int, int>> fractal_points, int iteration){
     for(int j=0;j<iteration;j++){
@@ -49,8 +49,8 @@ int main(){
     int gdriver = DETECT, gmode;
     initgraph(&gdriver, &gmode, "");
 
-    vector<pair<int, int>> points = {{150,150}, {450,150}, {300,300}, {150,150}}; //{150,150}, {450,150}, {300,300}, {150,150} good sample
-    snowflake(points, 7); //input 0 to see the initiator
+    vector<pair<int, int>> points = {{150,350}, {300,90}, {450,350}, {150,350}}; //{150,350}, {300,90}, {450,350}, {150,350} good sample
+    snowflake(points, 6); //input 0 to see the initiator
 
     getch();
     closegraph;
